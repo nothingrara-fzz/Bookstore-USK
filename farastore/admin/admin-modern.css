@@ -1,0 +1,114 @@
+
+/* FARASTORE ADMIN — MODERN UI */
+:root{
+ --adm-pink:#df6890;--adm-pink-dark:#c94d79;--adm-pale:#fff4f8;
+ --adm-ink:#302438;--adm-muted:#8e8290;--adm-line:#f0e3e9;
+ --adm-bg:#fff9fb;--adm-shadow:0 12px 35px rgba(72,39,57,.06);
+}
+body.admin-body{margin:0;background:var(--adm-bg);color:var(--adm-ink);font-family:'DM Sans','Plus Jakarta Sans',Arial,sans-serif}
+.admin-layout{min-height:100vh;display:flex;max-width:none;margin:0;background:var(--adm-bg)}
+.admin-side{width:250px;min-width:250px;min-height:100vh;position:sticky;top:0;align-self:flex-start;padding:28px 18px;background:#fff;border-right:1px solid var(--adm-line);box-sizing:border-box}
+.admin-side .brand{display:flex;align-items:center;gap:12px;padding:4px 10px 30px;text-decoration:none;color:var(--adm-ink);font-size:21px;font-weight:800;line-height:1.1}
+.admin-side .brand-mark{width:45px;height:45px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,#f8b5cb,#df6890);color:#fff;font:italic 30px Georgia;box-shadow:0 8px 18px #df689033}
+.admin-side .brand span span{color:var(--adm-pink)}
+.admin-side .brand small{display:block;margin-top:6px;color:#ad9aa8;font-size:9px;letter-spacing:2px}
+.admin-side nav{display:flex;flex-direction:column;gap:7px}
+.admin-side nav a{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:12px;color:#796c7c;text-decoration:none;font-size:13px;font-weight:600;transition:.2s}
+.admin-side nav a:hover,.admin-side nav a.active{background:var(--adm-pale);color:var(--adm-pink-dark)}
+.admin-side nav a.active{box-shadow:inset 3px 0 var(--adm-pink)}
+.admin-main{flex:1;min-width:0;padding:30px clamp(18px,3vw,48px) 55px}
+.admin-top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 28px;padding:0 0 20px;border-bottom:1px solid var(--adm-line)}
+.admin-top h1{margin:0;color:var(--adm-ink);font-size:25px;font-weight:800;letter-spacing:-.6px}
+.admin-top .text-link{padding:10px 15px;border:1px solid var(--adm-line);border-radius:11px;background:#fff;color:var(--adm-pink-dark);text-decoration:none;font-size:12px;font-weight:700}
+.panel,.detail-card,.book-form-panel,.book-list-panel{background:#fff;border:1px solid var(--adm-line);border-radius:18px;padding:24px;box-shadow:var(--adm-shadow);margin-bottom:22px}
+.panel h2,.book-form-panel h2,.book-list-panel h2{margin:0 0 14px;color:var(--adm-ink);font-size:18px}
+.muted{color:var(--adm-muted);font-size:12px;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:22px}
+.stat{padding:22px;background:#fff;border:1px solid var(--adm-line);border-radius:17px;box-shadow:var(--adm-shadow)}
+.stat small{display:block;color:var(--adm-muted);font-size:12px;margin-bottom:12px}
+.stat strong{display:block;color:var(--adm-pink-dark);font-size:25px;letter-spacing:-.6px}
+.table-wrap{width:100%;overflow-x:auto;border:1px solid var(--adm-line);border-radius:13px}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:650px}
+th{padding:14px 15px;background:#fff5f8;color:#9d5574;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.7px;white-space:nowrap}
+td{padding:14px 15px;border-top:1px solid #f5edf1;color:#554958;font-size:12px;vertical-align:middle;line-height:1.6}
+tbody tr:hover{background:#fffafd}
+input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea{max-width:100%;border:1px solid #eadde5;border-radius:10px;background:#fff;color:var(--adm-ink);padding:11px 13px;font:inherit;font-size:13px;outline:none;transition:.2s;box-sizing:border-box}
+input:focus,select:focus,textarea:focus{border-color:#e58aaa;box-shadow:0 0 0 3px #df689018}
+button,.btn,.admin-link,.book-submit,.btn-print,.proof-open-button{transition:.2s}
+button[type=submit],.btn,.book-submit,.btn-print{border:0;border-radius:10px;background:var(--adm-pink);color:#fff;padding:11px 17px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none}
+button[type=submit]:hover,.btn:hover,.book-submit:hover,.btn-print:hover{background:var(--adm-pink-dark);transform:translateY(-1px)}
+.admin-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid #f0d5e0;border-radius:9px;background:#fff6f9;color:var(--adm-pink-dark);font-size:11px;font-weight:700;text-decoration:none;cursor:pointer}
+.inline-form{display:flex;align-items:center;gap:7px;min-width:205px}
+.inline-form select{min-width:130px;padding:8px;font-size:11px}
+.alert{padding:12px 15px;border-radius:10px;margin:12px 0;font-size:13px}
+.alert.error{background:#fff0f0;color:#b84454}
+.alert.success{background:#edf9f1;color:#287d50}
+.proof-accepted,.proof-missing{display:inline-block;padding:7px 10px;border-radius:8px;font-size:11px;font-weight:700}
+.proof-accepted{background:#eaf8f0;color:#218354}.proof-missing{background:#fff4e3;color:#a76b17}
+/* Detail pesanan */
+.detail-page{max-width:1200px;margin:0 auto}
+.detail-page-header{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:20px}
+.detail-eyebrow{color:var(--adm-pink-dark);font-size:10px;font-weight:800;letter-spacing:1.6px}
+.detail-page-header h1{margin:7px 0;color:var(--adm-ink);font-size:26px}
+.detail-page-header p,.order-date{margin:5px 0;color:var(--adm-muted);font-size:12px}
+.back-button{padding:11px 15px;border:1px solid var(--adm-line);border-radius:10px;background:#fff;color:var(--adm-pink-dark);font-size:12px;font-weight:700;text-decoration:none}
+.detail-card{padding:25px}
+.order-top{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.order-label{color:#a28e9d;font-size:10px;font-weight:800;letter-spacing:1px}
+.order-top h2{margin:7px 0;color:var(--adm-ink);font-size:21px}
+.order-status{padding:8px 13px;border-radius:30px;background:#fff2e0;color:#a87525;font-size:11px;font-weight:700}
+.detail-divider{height:1px;background:var(--adm-line);margin:20px 0}
+.information-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.information-card{padding:20px;border:1px solid var(--adm-line);border-radius:14px;background:#fffafd;min-width:0}
+.information-heading{display:flex;align-items:center;gap:12px;margin-bottom:17px}
+.information-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:#fceaf1;color:var(--adm-pink-dark)}
+.information-heading span{font-size:9px;color:#a18e9c;letter-spacing:1px;font-weight:800}
+.information-heading h3{margin:4px 0 0;font-size:14px}
+.customer-name,.payment-method{font-size:14px;font-weight:800;margin-bottom:12px}
+.information-list{display:grid;gap:12px}
+.information-item{display:flex;gap:10px;color:#7d7180;font-size:12px;line-height:1.7;overflow-wrap:anywhere}
+.information-item i{color:var(--adm-pink);width:15px;padding-top:3px}
+.payment-total{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-block:1px solid var(--adm-line);font-size:12px}
+.payment-total span{color:var(--adm-muted)}.payment-total strong{color:var(--adm-pink-dark)}
+.proof-open-button{display:flex;flex-direction:column;gap:8px;margin-top:13px;padding:8px;border:1px solid var(--adm-line);border-radius:12px;background:#fff;color:var(--adm-pink-dark);font-size:11px}
+.proof-open-button img{width:150px;height:100px;object-fit:contain;border-radius:7px}
+.btn-print{display:inline-flex;margin-top:12px;align-items:center;gap:8px}
+.proof-modal{background:#241923b8}
+.proof-modal-content{border-radius:18px!important;box-shadow:0 20px 60px #1e102033}
+.modal-heading{text-align:center;color:var(--adm-ink)}
+.modal-heading span{color:var(--adm-pink);font-size:10px;letter-spacing:2px;font-weight:800}
+.modal-heading h3{margin:8px 0 4px}
+.modal-heading p{color:var(--adm-muted);font-size:12px}
+.detail-card .proof-description{color:var(--adm-muted);font-size:12px}
+.cod-information{display:inline-block;padding:10px 12px;border-radius:9px;background:#f5f1f7;color:#786b80;font-size:12px}
+.book-cover-thumb{max-width:110px;max-height:145px;object-fit:contain;border-radius:9px}
+.book-current-image{display:flex;align-items:center;gap:15px;margin-top:12px}
+.book-field{display:grid;gap:7px;margin-bottom:16px}
+.book-field label{font-size:12px;font-weight:700;color:#574858}
+.book-field input,.book-field textarea,.book-field select{width:100%}
+.book-check{display:flex;align-items:center;gap:9px;margin:12px 0 18px;font-size:12px;color:#574858}
+.auth-wrap{min-height:100vh;display:grid;place-items:center;padding:25px;background:radial-gradient(circle at 15% 15%,#ffe7f0,transparent 35%),#fff8fb}
+.auth-card{width:min(430px,100%);padding:38px;background:#fff;border:1px solid var(--adm-line);border-radius:22px;box-shadow:0 20px 60px #67334d12;box-sizing:border-box}
+.auth-card .eyebrow{color:var(--adm-pink);font-size:10px;font-weight:800;letter-spacing:1.7px}
+.auth-card h1{margin:12px 0;color:var(--adm-ink);font-size:30px}
+.auth-card h1 em{color:var(--adm-pink);font-family:Georgia,serif}
+.auth-card p{color:var(--adm-muted);font-size:13px;line-height:1.7}
+.auth-card .field{display:grid;gap:7px;margin:17px 0}
+.auth-card .field label{font-size:12px;font-weight:700}
+.auth-card .field input{width:100%}
+.auth-card .btn.full{width:100%;margin-top:8px}
+.auth-foot{margin-top:22px;text-align:center;font-size:12px}
+.auth-foot a{color:var(--adm-pink-dark);text-decoration:none;font-weight:700}
+@media(max-width:850px){
+ .admin-layout{display:block}.admin-side{position:relative;width:100%;min-width:0;min-height:0;padding:15px 18px;border-right:0;border-bottom:1px solid var(--adm-line)}
+ .admin-side .brand{padding:0 5px 14px}.admin-side nav{flex-direction:row;overflow-x:auto;padding-bottom:3px}
+ .admin-side nav a{white-space:nowrap;padding:10px 12px}.admin-main{padding:22px 16px 40px}
+}
+@media(max-width:650px){
+ .admin-top{align-items:flex-start}.admin-top h1{font-size:21px}
+ .panel,.detail-card,.book-form-panel,.book-list-panel{padding:17px}
+ .information-grid{grid-template-columns:1fr}.detail-page-header{align-items:flex-start;flex-direction:column}
+ .order-top{align-items:flex-start;flex-direction:column}
+ .stats{grid-template-columns:1fr 1fr}.stat{padding:16px}.stat strong{font-size:20px}
+ .auth-card{padding:25px}
+}
